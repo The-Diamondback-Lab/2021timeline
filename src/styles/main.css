@@ -1,0 +1,49 @@
+﻿@import 'spinner.css';
+@import 'fonts.css';
+@import 'header.css';
+@import 'footer.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-size: 34px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#article-content {
+  width: 80%;
+}
+
+/* Tablets */
+@media screen and (min-device-width: 768px) {
+  body {
+    font-size: 24px;
+  }
+
+  #article-content {
+    width: 75%;
+  }
+
+  .footer-logo {
+    height: 1.4em;
+  }
+}
+
+/* Laptops/Desktops */
+@media screen and (min-device-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+
+  #article-content {
+    width: 70%;
+  }
+}

@@ -1,17 +1,60 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Helmet from 'react-helmet'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Spinner from './components/Spinner'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import './styles/main.css'
+
+class Home extends React.Component {
+  constructor() {
+    super()
+    this.state = { loaded: false, startFadeOut: false }
+  }
+
+  componentDidMount() {
+    // After main component finishes mounting, wait 500ms
+    // and change "loaded" to true and "startFadeOut" to true.
+    // This will cause the spinner to start fading out.
+    // This setState will call another timeout (750ms later)
+    // to change the loaded to true and fade out to false,
+    // indicating to the spinner that it should not display
+
+    setTimeout(() => {
+      // Indicating spinner to start fading out
+      this.setState({
+        loaded: true,
+        startFadeOut: true
+      }, () => {
+        // Eventually tell spinner to never display
+        setTimeout(() => {
+          this.setState({
+            loaded: true,
+            startFadeOut: false
+          })
+        }, 1000)
+      })
+    }, 1000)
+  }
+
+  render() {
+    return (
+      <div id='Home' style={{ backgroundColor: 'rgb(25, 25, 25)' }}>
+        <Spinner
+          loaded={this.state.loaded}
+          startFadeOut={this.state.startFadeOut} />
+        <Helmet>
+          <title>2021 Timeline</title>
+          <link rel='icon' href='favicon.ico' />
+        </Helmet>
+
+        <Header />
+        <Footer />
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<Home />, document.getElementById('app'))
