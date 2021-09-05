@@ -5,8 +5,12 @@ import Helmet from 'react-helmet'
 import Spinner from './components/Spinner'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Event from './components/Event'
+import ReverseEvent from './components/ReverseEvent'
+import Title from './components/Title'
 
 import './styles/main.css'
+import EventInfo from './data/EventInfo.json'
 
 class Home extends React.Component {
   constructor() {
@@ -51,6 +55,11 @@ class Home extends React.Component {
         </Helmet>
 
         <Header />
+        <Title />
+        <ReverseEvent date={'Sample Date'} title={'Sample Title'} desc={'Sample Description'} />
+        {EventInfo.map((item) =>
+          <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
+        )}
         <Footer />
       </div>
     )
