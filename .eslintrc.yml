@@ -21,4 +21,4 @@ rules:
   space-before-function-paren:
     - error
     - never
-react/prop-types: 0
+  react/prop-types: off

@@ -45,7 +45,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div id='Home' style={{ backgroundColor: 'rgb(25, 25, 25)' }}>
+      <div id='Home'>
         <Spinner
           loaded={this.state.loaded}
           startFadeOut={this.state.startFadeOut} />
