@@ -6,7 +6,7 @@ import Spinner from './components/Spinner'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Event from './components/Event'
-import ReverseEvent from './components/ReverseEvent'
+// import ReverseEvent from './components/ReverseEvent'
 import Title from './components/Title'
 
 import './styles/main.css'
@@ -57,18 +57,11 @@ class Home extends React.Component {
         <Header />
         <p></p>
         <Title />
-        <ReverseEvent date={'Test1'} title={'Test2'} desc={'Test3'} />
-        {EventInfo.map((item) =>
-          <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
-        )}
-        {EventInfo.map((item) =>
-          <ReverseEvent key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
-        )}
         {EventInfo.map((item) =>
           <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
         )}
         <p></p>
-        <Footer />
+        <Footer style={{ display: 'inline-block' }} />
       </div>
     )
   }
