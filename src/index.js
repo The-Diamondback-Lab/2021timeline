@@ -55,11 +55,19 @@ class Home extends React.Component {
         </Helmet>
 
         <Header />
+        <p></p>
         <Title />
         <ReverseEvent date={'Test1'} title={'Test2'} desc={'Test3'} />
         {EventInfo.map((item) =>
           <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
         )}
+        {EventInfo.map((item) =>
+          <ReverseEvent key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
+        )}
+        {EventInfo.map((item) =>
+          <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
+        )}
+        <p></p>
         <Footer />
       </div>
     )
