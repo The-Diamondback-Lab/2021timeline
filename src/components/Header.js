@@ -7,7 +7,7 @@ export default class Header extends React.Component {
       <div className='header-bg'>
         <div><img id="background-image" src={bgImage} /></div>
         <div className='header-content'>
-          <div id="title-text">2021</div>
+          <div id="title-text">2020-2021</div>
           <div id="subtitle-text">A Year In Review</div>
         </div>
       </div>

@@ -50,7 +50,7 @@ class Home extends React.Component {
           loaded={this.state.loaded}
           startFadeOut={this.state.startFadeOut} />
         <Helmet>
-          <title>2021 Timeline</title>
+          <title>2020-2021 Timeline</title>
           <link rel='icon' href='favicon.ico' />
         </Helmet>
 
@@ -58,7 +58,7 @@ class Home extends React.Component {
         <p></p>
         <Title />
         {EventInfo.map((item) =>
-          <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} />
+          <Event key={item.Title} date={item.Date} title={item.Title} desc={item.Description} image={item.Image} link={item.Link} />
         )}
         <p></p>
         <Footer style={{ display: 'inline-block' }} />
