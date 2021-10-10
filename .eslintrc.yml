@@ -21,4 +21,5 @@ rules:
   space-before-function-paren:
     - error
     - never
+  spaced-comment: off
   react/prop-types: off

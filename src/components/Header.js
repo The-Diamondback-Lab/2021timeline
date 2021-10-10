@@ -1,6 +1,8 @@
 import React from 'react'
 import bgImage from '../assets/bgimage.jpg'
 
+// test comment
+
 export default class Header extends React.Component {
   render() {
     return (
